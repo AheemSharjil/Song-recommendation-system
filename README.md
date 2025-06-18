@@ -4,6 +4,13 @@ An industry-aligned final-year undergraduate project designed to recommend music
 
 ---
 
+## 🌐 Live Demo
+
+🎉 **Try it now:** [auraflow.streamlit.app](https://auraflow.streamlit.app/)
+
+No installation needed — just open the link and start discovering music instantly!
+
+---
 ## 🚀 Overview
 
 In a world flooded with music, our goal was simple: **help users discover songs similar to their favorites** — fast, accurately, and intuitively. This app allows users to build a playlist, then receive smart recommendations based on the audio characteristics of the selected songs.
