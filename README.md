@@ -1,85 +1,62 @@
-🔊 BeatBot: The Smarter Spotify Recommender
-"Like having a musicologist and data scientist DJ just for you"
-https://img.shields.io/badge/License-MIT-green.svg
-https://static.streamlit.io/badges/streamlit_badge_black_white.svg
-https://img.shields.io/badge/Spotify%2520API-1DB954?logo=spotify&logoColor=white
+# 🎧 Spotify Music Recommendation System
 
-<div align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW0yY2VjN2N1d3RlZ3F6eWx4Z2xqYzV4dGJtY3BneHl2eGJvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QBd2kLB5qDmysEXre9/giphy.gif" width="400px" alt="BeatBot Demo"> </div>
-🎯 Why BeatBot Beats Spotify's Algorithm
-Feature	Spotify	BeatBot
-Explainable AI	❌	✅ t-SNE Clusters
-Works Offline	❌	✅ Local Dataset Fallback
-Niche Genre Coverage	58%	92%
-Cold-Start Accuracy	52%	78%
-🚀 1-Click Deploy
-https://static.streamlit.io/badges/streamlit_badge_black_white.svg
-No setup needed - try it now!
+An industry-aligned final-year undergraduate project designed to recommend music you *actually* want to hear — using the power of machine learning, clustering, and a sprinkle of Spotify's magic (API).
 
-🔥 Features That Pop
-🧠 Hybrid Intelligence
-Spotify API Pulse: Live audio feature extraction
+---
 
-Local Brain: 200k+ song dataset for backup
+## 🚀 Overview
 
-Smart Cache: 30% fewer API calls
+In a world flooded with music, our goal was simple: **help users discover songs similar to their favorites** — fast, accurately, and intuitively. This app allows users to build a playlist, then receive smart recommendations based on the audio characteristics of the selected songs.
 
-🎨 Visual Storytelling
-python
-# See music science in action!
-px.scatter(tsne_data, color='cluster', hover_data=['genre'])
-Interactive Plotly charts show why songs match
+Built with:
 
-⚡ Real-Time Remixing
-https://github.com/your-username/beatbot/assets/123456789/sample-demo.mp4
-Watch recommendations evolve as you tweak playlists
+- **Python**
+- **Spotipy** (Spotify Web API wrapper)
+- **Scikit-learn**
+- **Streamlit**
+- **Plotly**
 
-💻 Developer Playground
-🛠️ Tech Stack Deep Dive
-https://github.com/your-username/beatbot/blob/main/docs/architecture.png?raw=true
+---
 
-🧩 Modular Components
-bash
-.
-├── /core
-│   ├── recommender.py  # Hybrid ML magic
-│   └── spotify_client.py  # Rate-limited API wrapper
-├── /ui
-│   ├── app.py  # Streamlit dashboard
-│   └── components/  # Reusable widgets
-└── /data
-    ├── processed/  # Cleaned features
-    └── raw/  # Original CSVs
-🏎️ Performance Benchmarks
-Operation	Time (ms)
-API Song Fetch	320
-Local Recommendation	120
-Cluster Visualization	890
-🎮 Interactive Tutorial
-python
-# Try this in our Colab notebook!
-from beatbot import Recommender
-bot = Recommender(api_key="your_key")
-bot.explain(song="Bohemian Rhapsody")  # See the AI's reasoning
-https://colab.research.google.com/assets/colab-badge.svg
+## 📦 Features
 
-🌍 Community Impact
-3,500+ indie artists discovered by users
+- 🔍 **Song Search + Recommendation** — Enter a song name and year to get similar song suggestions.
+- 🧠 **ML-Based Clustering** — Visualizes genre relationships using KMeans + t-SNE.
+- 🖼️ **Interactive UI** — Clean and responsive interface using Streamlit.
+- 🌐 **Spotify API Integration** — Retrieves live song metadata and audio features.
 
-14% higher playlist retention vs Spotify's algorithm
+---
 
-Featured on Awesome-Recommender-Systems
+## 🛠️ Tech Stack
 
-✨ Special Sauce
-Our secret ingredient? "Feature Warping" - a proprietary technique that:
+| Layer            | Tools Used                                      |
+|------------------|-------------------------------------------------|
+| Frontend         | Streamlit                                       |
+| Backend Logic    | Python, Scikit-learn, NumPy, Pandas             |
+| Visualization    | Plotly, t-SNE                                   |
+| External API     | Spotify API (via Spotipy)                       |
+| Data Sources     | `data.csv`, `data_by_genres.csv`                |
 
-Normalizes audio features across decades
+---
 
-Detects hidden patterns in lesser-known genres
+## 📚 How It Works
 
-Adapts to your "sound DNA" over time
+1. User adds songs (name + year) to a playlist.
+2. For each song:
+   - Fetch metadata from the dataset.
+   - If missing, fetch via Spotify API.
+3. Calculate the average feature vector.
+4. Compare it with the dataset using cosine similarity.
+5. Return top-N closest songs (excluding current ones).
+6. For genre visualization:
+   - Perform KMeans clustering on genre-level data.
+   - Visualize with t-SNE in 2D scatter plot.
 
-Patent pending - Learn more in our whitepaper
+---
 
-💬 Testimonials
-"BeatBot found me 8 new favorite artists Spotify never suggested" - @MusicNerd42
-"The cluster visualization finally helped me understand my music taste" - @DataDJ
+## ⚙️ Setup Instructions
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/yourusername/spotify-recommender.git
+   cd spotify-recommender
