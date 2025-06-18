@@ -58,5 +58,4 @@ Built with:
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/yourusername/spotify-recommender.git
-   cd spotify-recommender
+   git clone https://github.com/AheemSharjil/Song-recommendation-system.git
